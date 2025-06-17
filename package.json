@@ -1,7 +1,7 @@
 {
     "name": "@purinton/openweathermap",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A Node.js openweathermap.",
     "module": "index.mjs",
     "types": "index.d.ts",
