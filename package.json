@@ -2,7 +2,7 @@
     "name": "@purinton/openweathermap",
     "type": "module",
     "version": "1.0.1",
-    "description": "A Node.js openweathermap.",
+    "description": "A simple, modern, Node.js client for the OpenWeatherMap API. Fetch current weather, 24-hour forecast, and sunrise/sunset times with a clean, promise-based API.",
     "module": "index.mjs",
     "types": "index.d.ts",
     "files": [
@@ -26,7 +26,14 @@
     },
     "keywords": [
         "openweathermap",
-        "nodejs"
+        "weather",
+        "forecast",
+        "sunrise",
+        "sunset",
+        "nodejs",
+        "esm",
+        "api",
+        "typescript"
     ],
     "author": "Russell Purinton <russell@purinton.us>",
     "license": "MIT",
