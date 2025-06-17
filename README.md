@@ -2,7 +2,7 @@
 
 ## @purinton/openweathermap [![npm version](https://img.shields.io/npm/v/@purinton/openweathermap.svg)](https://www.npmjs.com/package/@purinton/openweathermap)[![license](https://img.shields.io/github/license/purinton/openweathermap.svg)](LICENSE)[![build status](https://github.com/purinton/openweathermap/actions/workflows/nodejs.yml/badge.svg)](https://github.com/purinton/openweathermap/actions)
 
-> A simple, modern, ESM-only Node.js client for the OpenWeatherMap API. Fetch current weather, 24-hour forecast, and sunrise/sunset times with a clean, promise-based API.
+> A simple, modern, Node.js client for the OpenWeatherMap API. Fetch current weather, 24-hour forecast, and sunrise/sunset times with a clean, promise-based API.
 
 ---
 
