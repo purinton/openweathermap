@@ -70,21 +70,26 @@ export async function get24hForecast(lat, lon, {
 }
 
 /**
- * Fetch sunrise and sunset times for the given coordinates, adjusted to local timezone
+ * Fetch sunrise and sunset times for the given coordinates, returns both UTC and local times
  * @param {number} lat
  * @param {number} lon
  * @param {object} [options]
  * @param {string} [options.apiKey=process.env.OWM_API_KEY]
  * @param {string} [options.units='C']
  * @param {function} [options.fetchImpl=fetch]
- * @returns {Promise<{sunrise: number, sunset: number}|null>} Unix timestamps (local time)
+ * @returns {Promise<{sunriseUtc: number, sunsetUtc: number, sunriseLocal: number, sunsetLocal: number, offset: number}|null>}
  */
 export async function getSun(lat, lon, options = {}) {
   const current = await getCurrent(lat, lon, options);
   if (!current || !current.sys) return null;
   const offset = current.timezone || 0;
+  const sunriseUtc = current.sys.sunrise;
+  const sunsetUtc = current.sys.sunset;
   return {
-    sunrise: current.sys.sunrise + offset,
-    sunset: current.sys.sunset + offset
+    sunriseUtc,
+    sunsetUtc,
+    sunriseLocal: sunriseUtc + offset,
+    sunsetLocal: sunsetUtc + offset,
+    offset: offset
   };
 }

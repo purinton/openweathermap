@@ -51,8 +51,17 @@ test('get24hForecast returns array', async () => {
   expect(data.length).toBeGreaterThanOrEqual(0);
 });
 
-test('getSun returns sunrise and sunset', async () => {
+test('getSun returns correct sunrise/sunset fields', async () => {
   const data = await getSun(lat, lon, { apiKey, fetchImpl: fakeFetch });
-  expect(data).toHaveProperty('sunrise');
-  expect(data).toHaveProperty('sunset');
+  expect(data).toHaveProperty('sunriseUtc');
+  expect(data).toHaveProperty('sunsetUtc');
+  expect(data).toHaveProperty('sunriseLocal');
+  expect(data).toHaveProperty('sunsetLocal');
+  expect(data).toHaveProperty('offset');
+  // Check values are correct
+  expect(data.sunriseUtc).toBe(1750152267);
+  expect(data.sunsetUtc).toBe(1750206576);
+  expect(data.sunriseLocal).toBe(1750152267 - 14400);
+  expect(data.sunsetLocal).toBe(1750206576 - 14400);
+  expect(data.offset).toBe(-14400);
 });

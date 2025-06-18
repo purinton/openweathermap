@@ -73,10 +73,19 @@ Fetches the next 24 hours of forecast data (3-hour intervals, up to 8 items).
 
 ### getSun(lat, lon, options?)
 
-Fetches sunrise and sunset times for the given coordinates, adjusted to the local timezone.
+Fetches sunrise and sunset times for the given coordinates, returning both UTC and local times.
 
 - Same parameters as `getCurrent`
-- **Returns:** Promise resolving to `{ sunrise: number, sunset: number }` (Unix timestamps, local time)
+- **Returns:** Promise resolving to:
+  ```js
+  {
+    sunriseUtc: number,    // Sunrise time (UTC, Unix timestamp)
+    sunsetUtc: number,     // Sunset time (UTC, Unix timestamp)
+    sunriseLocal: number,  // Sunrise time (local, Unix timestamp)
+    sunsetLocal: number,   // Sunset time (local, Unix timestamp)
+    offset: number       // Timezone offset in seconds (from UTC)
+  }
+  ```
 
 ## TypeScript
 
