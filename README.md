@@ -77,6 +77,7 @@ Fetches sunrise and sunset times for the given coordinates, returning both UTC a
 
 - Same parameters as `getCurrent`
 - **Returns:** Promise resolving to:
+
   ```js
   {
     sunriseUtc: number,    // Sunrise time (UTC, Unix timestamp)
